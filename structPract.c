@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct _Pitcher
+struct Pitcher
 {
     char FirstName[256];
     char LastName[256];
@@ -11,13 +11,13 @@ struct _Pitcher
     char Gender;
 };
 
-void PrintPitcher(struct _Pitcher * p);
-void PrintPitchers(struct _Pitcher p[], int size);
+void PrintPitcher(struct Pitcher * p);
+void PrintPitchers(struct Pitcher p[], int size);
 
 int main(void)
 {
-    struct _Pitcher pitcherInfo[10];
-    struct _Pitcher * pitcher3 = &(pitcherInfo[1]);
+    struct Pitcher pitcherInfo[10];
+    struct Pitcher * pitcher3 = &(pitcherInfo[1]);
 
     // array 0th element of struct
     strcpy(pitcherInfo[0].FirstName,"Jim"); // must use strcpy for array
@@ -37,7 +37,7 @@ int main(void)
     PrintPitchers(pitcherInfo, 10);
 }
 
-void PrintPitchers(struct _Pitcher p[], int size)
+void PrintPitchers(struct Pitcher p[], int size)
 {
     int i;
     for(i=0; i<size; i++)
@@ -46,7 +46,7 @@ void PrintPitchers(struct _Pitcher p[], int size)
     }
 }
 
-void PrintPitcher(struct _Pitcher * p)
+void PrintPitcher(struct Pitcher * p)
 {
     printf("\n******************\n");
     printf("First Name: %s\n", p->FirstName);
